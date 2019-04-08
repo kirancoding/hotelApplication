@@ -1,0 +1,48 @@
+CREATE DATABASE  IF NOT EXISTS `hotel_app_directory`;
+
+USE `hotel_app_directory`;
+
+
+--
+-- Table structure for table `employee`
+--
+
+
+DROP TABLE IF EXISTS `HOTEL`;
+
+
+
+CREATE TABLE HOTEL(HOTEL_ID int(11) NOT NULL AUTO_INCREMENT,
+HOTEL_NAME varchar(50) DEFAULT NULL, 
+HOTEL_EMAIL varchar(50) DEFAULT NULL, 
+HOTEL_PHONE bigint(20) DEFAULT NULL,
+HOTEL_ADDRESS varchar(250) DEFAULT NULL,
+HOTEL_CITY varchar(250) DEFAULT NULL, 
+HOTEL_IMAGE varchar(250) DEFAULT NULL, 
+HOTEL_ROOM_IMAGE  varchar(250) DEFAULT NULL,
+HOTEL_AMENITIES      varchar(250) DEFAULT NULL,
+HOTEL_STARS    int(11) DEFAULT NULL, 
+HOTEL_RATINGS_AVG int(11) DEFAULT NULL,
+HOTEL_PCOMMENTS    TEXT DEFAULT NULL,
+HOTEL_NCOMMENTS    TEXT DEFAULT NULL,
+HOTEL_DESCRIPTION TEXT DEFAULT NULL,
+PRIMARY KEY (`HOTEL_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+--
+-- Data for table `employee`
+---
+
+
+INSERT INTO `hotel` VALUES 
+	
+(1,'Hyatt Place','hyattplace@gmail.com',987654321,'Hyatt Place Hyderabad/Banjara Hills','hyderabad','hotel image','hotel room image','hotel amenities',3,2.3,'good','good','best hotel in hyderabad'),
+
+
+(2,'The Park Hyderabad','theparkhyderabad@gmail.com',987654321,'The Park Hyderabad Hyderabad/somajiguda','hyderabad','hotel image','hotel room image','hotel amenities',2,2.3,'good','good','best hotel in hyderabad'),
+
+
+(3,'The Orchid','theorchid@gmail.com',654321987,'The Orchid Mumbai' ,' mumbai','hotel image','hotel room image','hotel amenities',4,2.3,'good','good','best hotel in mumbai'),
+(4,'Hotel Kumkum','hotelKumkum@gmail.com',987674321,' 165, Lamington Road, 400007 Mumbai','mumbai',LOAD_FILE('E:\hotelImages\hotelkumkum'),LOAD_FILE('E:\hotelImages\hotelkumkumroom'),'hotel amenities',3,2.3,'good','good','best hotel in mumbai'),
+(5,'JW Marriott Pune','jwmarriott@gmail.com',987874321,' 165, Lamington Road, 400007 pune','pune',LOAD_FILE('E:\hotelImages\jwmariott'),LOAD_FILE('E:\hotelImages\jwmariott'),'hotel amenities',4,4.3,'good','good','best hotel in pune');
