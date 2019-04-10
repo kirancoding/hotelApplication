@@ -4,7 +4,7 @@ USE `hotel_app_directory`;
 
 
 --
--- Table structure for table `employee`
+-- Table structure for table `hotel`
 --
 
 
@@ -31,7 +31,7 @@ PRIMARY KEY (`HOTEL_ID`)
 
 
 --
--- Data for table `employee`
+-- Data for table `hotel`
 ---
 
 
@@ -46,3 +46,29 @@ INSERT INTO `hotel` VALUES
 (3,'The Orchid','theorchid@gmail.com',654321987,'The Orchid Mumbai' ,' mumbai','hotel image','hotel room image','hotel amenities',4,2.3,'good','good','best hotel in mumbai'),
 (4,'Hotel Kumkum','hotelKumkum@gmail.com',987674321,' 165, Lamington Road, 400007 Mumbai','mumbai',LOAD_FILE('E:\hotelImages\hotelkumkum'),LOAD_FILE('E:\hotelImages\hotelkumkumroom'),'hotel amenities',3,2.3,'good','good','best hotel in mumbai'),
 (5,'JW Marriott Pune','jwmarriott@gmail.com',987874321,' 165, Lamington Road, 400007 pune','pune',LOAD_FILE('E:\hotelImages\jwmariott'),LOAD_FILE('E:\hotelImages\jwmariott'),'hotel amenities',4,4.3,'good','good','best hotel in pune');
+
+
+--
+-- Table structure for table `user`
+--
+
+
+CREATE TABLE USER(USER_EMAIL varchar(50), USER_NAME varchar(50),
+USER_PHONE bigint(20), USER_PASSWORD varchar(50)) ENGINE=MYISAM DEFAULT CHARSET=latin1;
+SET AUTOCOMMIT=0;
+
+--
+-- Data for table `user`
+---
+
+
+INSERT INTO USER VALUES ('visitor1.casperstay@gmail.com','Visitor1',9876543213,'visitor1@123');
+COMMIT;
+
+INSERT INTO USER VALUES ('visitor2.casperstay@gmail.com','Visitor2',9876543212,'visitor2@123');
+COMMIT;
+
+ALTER TABLE USER
+    ADD PRIMARY KEY (`USER_NAME`),
+    
+ADD UNIQUE KEY `USER_NAME_USER_EMAIL_USER_PHONE_uk` (`USER_NAME`, `USER_EMAIL`,`USER_PHONE`);
